@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<report
+			auto="False"
+			id="contract_report_mod_ids"
+			model="contract.template.wizard"
+			name="contract_report_mod"
+			file="template_contract/report/template_contract_report.mako"
+			string="Contract Report"
+			report_type="webkit"
+			header="True"  
+			parser = "template_contract.report.template_contract_report.contract_report"
+			/>
+
+		<report id="report_qweb_contrtact"
+		        string="Contract Report"
+                model="contract.template.wizard"
+			    report_type="qweb-pdf"
+			    file="template_contract.template_contract_custom"
+			    name="template_contract.report_qweb_contract_repeat" />
+
+	</data>
+</openerp>
