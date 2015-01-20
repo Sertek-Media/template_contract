@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_template_settings_form" model="ir.ui.view">
+			<field name="name">template_settings</field>
+			<field name="model">contract.template.settings</field>
+			<field name="arch" type="xml">
+				<form string="template" version="7.0">
+					<sheet>
+						<group>
+							<field name="name" class="oe_inline"/>
+							<field name="base_template" on_change = "onchange_child(base_template)"/>
+							<field name = "child_of_template"  attrs = "{'invisible':[('base_template','=',True)]}"/>
+						</group>
+						<group>							
+							<field name="report_html" nolabel="1"  widget='html'/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="view_school_trees" model="ir.ui.view">
+			<field name="name">template_settings</field>
+			<field name="model">contract.template.settings</field>
+			<field name="arch" type="xml">
+				<tree string="template">
+					<field name="name" />
+					<field name="base_template"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record id="view_template_settings_search" model="ir.ui.view">
+			<field name="name">template_settings_search</field>
+			<field name="model">contract.template.settings</field>
+			<field name="arch" type="xml">
+				<search string="Report Templates">
+					<field name="name" />
+					<field name="base_template"/>
+				</search>
+			</field>
+		</record>
+		
+		
+		<record id="action_template_settings" model="ir.actions.act_window">
+			<field name="name">Report Template</field>
+			<field name="res_model">contract.template.settings</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name ="domain">[('base_template','=',True)]</field> 
+			<field name="search_view_id" ref="view_template_settings_search" />
+			<field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a template of contract report.
+                </p>
+            </field>
+		</record>
+		<menuitem action="action_template_settings" id="menu_template_settings"
+		 name="Report Templates" parent="base.menu_base_config" sequence="35"/>
+	</data>
+</openerp> 

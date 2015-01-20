@@ -1,0 +1,2 @@
+import template_contract_report
+

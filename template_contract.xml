@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="contract_selection" model="ir.ui.view">
+			<field name="name">contract.selection</field>
+			<field name="model">account.analytic.account</field>
+			<field name="inherit_id" ref="analytic.view_account_analytic_account_form" />
+			<field name="arch" type="xml">
+				<xpath expr="/form/sheet/notebook/page[@string='Contract Information']" position="after">
+					<page string="Editable Report">
+						<group>
+							<field name="template_add" create="0" colspan="4"  nolabel="1" >
+								<form string = "many2one view" version="7.0">
+									<sheet>
+										<header>
+											<button name="preview_template" type="object" string="Preview" class="oe_highlight"/>										
+										</header>
+										<group>
+											<field name="name" class="oe_inline"/>
+											<field name = "child_of_template" domain="[('base_template','=',True)]"/>
+										</group>
+										<group>							
+											<field name="report_html" nolabel="1"  widget='html'/>
+										</group>
+									</sheet>
+								</form>
+							</field>
+						</group>
+					</page>
+				</xpath>
+				<xpath expr="/form/sheet/group/group/field[@name='code']" position="after">
+					<field name="advance_percent"/><!-- to remove search option in many2one field -->
+				</xpath>
+				<xpath expr="/form/sheet/group/group/field[@name='partner_id']" position="attributes">
+					<attribute name="required">1</attribute><!-- to remove search option in many2one field -->
+				</xpath>
+				
+				<!-- <xpath expr="/form/sheet/div[@class='oe_right oe_button_box']" position="before"> -->
+				<!-- <xpath expr="/form/sheet/div[@class='oe_right oe_button_box']" position="inside"> -->
+				<!-- <xpath expr="/form/sheet/notebook" position="before">
+					<button name="render" class="oe_right" string="Generate Editable Report" type="object"/>
+					 <button name="revert_change" class="oe_right oe_inline" string="Revert Back Changes" type="object" 
+					 help="Reverting back changes to last successful rendering of the report"
+					 confirm="Are you sure you want to revert back changes to last successful rendering ?" />
+				</xpath>-->
+			</field>
+		</record>
+		<record id="wizard_preveiw" model="ir.ui.view">
+			<field name="name">contract.template.wizard</field>
+			<field name="model">contract.template.wizard</field>
+			<field name="arch" type="xml">
+				<form string = "Wizard HTML view" version="7.0">
+					<heade>
+						<button name="print_contract" type="object" string = "Print Contract" class="oe_highlight"/>
+					</heade>
+					<sheet>
+						<field name="report_html" widget="html" readonly ="1" colspan="4" mode="tree,form" width="550" height="200" />
+					</sheet>
+				</form>		
+			</field>
+		</record>
+	</data>
+</openerp>
