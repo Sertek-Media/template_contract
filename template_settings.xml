@@ -57,6 +57,6 @@
             </field>
 		</record>
 		<menuitem action="action_template_settings" id="menu_template_settings"
-		 name="Report Templates" parent="base.menu_base_config" sequence="35"/>
+		 name="Report Templates" parent="base.menu_base_config" sequence="35" groups="base.group_sale_manager"/>
 	</data>
 </openerp> 

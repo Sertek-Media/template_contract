@@ -31,7 +31,7 @@ Contract Templates
     'images' : [], #'/images/image_name.png'
     'depends' : ['base','account_analytic_analysis','report_webkit','hr'],#account_analytic_analysis
     'data': ['template_contract_report.xml','template_contract.xml','template_settings.xml',
-             'report/template_contract_custom.xml'
+             'report/template_contract_custom.xml','security/ir.model.access.csv'
              ],
     'demo': [],
     'test': [],

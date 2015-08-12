@@ -17,13 +17,16 @@
 										</header>
 										<group>
 											<field name="name" class="oe_inline"/>
-											<field name = "child_of_template" domain="[('base_template','=',True)]"/>
+											<field name = "child_of_template" domain="[('base_template','=',True)]" widget="selection"/>
 										</group>
 										<group>							
 											<field name="report_html" nolabel="1"  widget='html'/>
 										</group>
 									</sheet>
 								</form>
+								<tree>
+										<field name="name"/>
+								</tree>
 							</field>
 						</group>
 					</page>

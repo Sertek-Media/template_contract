@@ -5,6 +5,7 @@ from openerp.osv import osv , orm , fields
 from openerp.addons.email_template import html2text
 from openerp.tools.translate import _
 from datetime import date
+from openerp import SUPERUSER_ID
 
 class template_contract(osv.osv):
     _inherit='account.analytic.account'
@@ -202,6 +203,33 @@ class template_settings(osv.osv):
     _defaults={
                'base_template':False
                } 
+    def preview_template(self,cr,uid,id,context=None):
+        #print('********* id',id)
+        vals={}
+        for i in id:
+            html_description_obj = self.browse(cr,uid,i,context)
+            html_description = html_description_obj.report_html
+            contract_id = html_description_obj.template_id.id
+            wizard_obj = self.pool.get('contract.template.wizard')
+    	    print("checkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
+            rendered=(self.pool.get('email.template').render_template(cr,SUPERUSER_ID,html_description,'account.analytic.account',contract_id))
+            print("checkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk0000000000000000000000000")
+            wizard_id = wizard_obj.create(cr,uid,{'report_html':rendered},context)
+            #print ("=======================================",wizard_id)
+            ids=[]
+            ids.append(contract_id)
+            #print('********* contract id',contract_id)
+            self.pool.get("account.analytic.account").write(cr,uid,ids,vals,context)
+            
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('contract.template.wizard'),
+            'res_model': 'contract.template.wizard',
+            'res_id': wizard_id,
+            'view_type': 'form',
+            'view_mode': 'form',
+            'target': 'new',
+        }
 
     def write (self,cr,uid,id,vals,context):
         if vals.has_key('child_of_template'):
