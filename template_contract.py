@@ -5,6 +5,9 @@ from openerp.osv import osv , orm , fields
 from openerp.addons.email_template import html2text
 from openerp.tools.translate import _
 from datetime import date
+import time
+from openerp import SUPERUSER_ID
+from openerp.tools.amount_to_text_en import amount_to_text
 
 class template_contract(osv.osv):
     _inherit='account.analytic.account'
@@ -16,6 +19,8 @@ class template_contract(osv.osv):
         for id in ids:
             res[id]=date.today()
         return res
+    
+    
     
     _columns={#'timesheet_invoice_ratio':
               'current_date':fields.function(_get_date,type='date'),
@@ -32,6 +37,10 @@ class template_contract(osv.osv):
               'time_words':fields.char('time words'),
               'vat_words':fields.char('vat words'),
               'full_amount_words':fields.char('full amount words'),
+              'customer_employee_id':fields.many2one('res.partner',string="Customer Employee",help="Employee from customer signing the contract"),
+              'owner_account_4_transaction':fields.many2one('res.partner.bank',string="Company Acc No.",help="Your Company Account Number"),
+              'customer_account_4_transaction':fields.many2one('res.partner.bank',string="Customer Acc No.",help="Customer Company Account Number"),
+              'credit_amt_in_words':fields.text(string="credit amount in words"),
               }
     
     
@@ -48,9 +57,6 @@ class template_contract(osv.osv):
                 raise osv.except_osv(('ERROR !'), ('No such employee in Human resources. Please rectify it.'))
         
         return super(template_contract,self).create(cr,uid,vals,context)
-    
-    
-    #def 
     
     
     def write(self,cr,uid,ids,vals,context):
@@ -202,6 +208,34 @@ class template_settings(osv.osv):
     _defaults={
                'base_template':False
                } 
+    def preview_template(self,cr,uid,id,context=None):
+        #print('********* id',id)
+        vals={}
+        for i in id:
+            html_description_obj = self.browse(cr,uid,i,context)
+            html_description = html_description_obj.report_html
+            contract_id = html_description_obj.template_id.id
+            wizard_obj = self.pool.get('contract.template.wizard')
+            contract_obj=self.pool.get('account.analytic.account').browse(cr,uid,contract_id,context)
+            credit_words=amount_to_text(contract_obj.partner_id.credit_limit)
+            current_time_1 = time.strftime("%d/%m/%Y")
+            current_time_2 = time.strftime("%Y/%m/%d")
+            rendered=self.pool.get('email.template').render_template(cr,SUPERUSER_ID,html_description,'account.analytic.account',contract_id,{'credit_words':credit_words,'current_time_1':current_time_1,'current_time_2':current_time_2})
+            wizard_id = wizard_obj.create(cr,uid,{'report_html':rendered},context)
+            ids=[]
+            ids.append(contract_id)
+            #print('********* contract id',contract_id)
+            self.pool.get("account.analytic.account").write(cr,uid,ids,vals,context)
+            
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('contract.template.wizard'),
+            'res_model': 'contract.template.wizard',
+            'res_id': wizard_id,
+            'view_type': 'form',
+            'view_mode': 'form',
+            'target': 'new',
+        }
 
     def write (self,cr,uid,id,vals,context):
         if vals.has_key('child_of_template'):
@@ -247,6 +281,3 @@ class contract_template_wizard(osv.osv_memory):
                     'datas': datas,
                     'context':context
                 }
-        
-        
-        

@@ -18,7 +18,12 @@
                 model="contract.template.wizard"
 			    report_type="qweb-pdf"
 			    file="template_contract.template_contract_custom"
-			    name="template_contract.report_qweb_contract_repeat" />
+			    name="template_contract.report_qweb_contract_repeat" 
+	    />
+	    
+	    <record id = "report_qweb_contrtact" model = "ir.actions.report.xml">
+	    	<field name = "paperformat_id" ref = "paper_format_template_contract"/>
+	    </record>
 
 	</data>
 </openerp>

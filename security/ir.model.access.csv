@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_contract_template_settings_user,contract.template.settings,model_contract_template_settings,base.group_sale_salesman,1,1,1,1
+access_contract_template_settings_manager,contract.template.settings,model_contract_template_settings,base.group_sale_manager,1,1,1,1

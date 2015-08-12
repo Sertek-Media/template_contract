@@ -17,13 +17,16 @@
 										</header>
 										<group>
 											<field name="name" class="oe_inline"/>
-											<field name = "child_of_template" domain="[('base_template','=',True)]"/>
+											<field name = "child_of_template" domain="[('base_template','=',True)]" widget="selection"/>
 										</group>
 										<group>							
 											<field name="report_html" nolabel="1"  widget='html'/>
 										</group>
 									</sheet>
 								</form>
+								<tree>
+										<field name="name"/>
+								</tree>
 							</field>
 						</group>
 					</page>
@@ -33,6 +36,11 @@
 				</xpath>
 				<xpath expr="/form/sheet/group/group/field[@name='partner_id']" position="attributes">
 					<attribute name="required">1</attribute><!-- to remove search option in many2one field -->
+				</xpath>
+				<xpath expr="/form/sheet/group/group/field[@name='manager_id']" position="after">
+					<field name="customer_employee_id" domain="[('parent_id','=',partner_id)]" />
+					<field name="owner_account_4_transaction" domain="[('company_id','=',company_id)]" />
+					<field name="customer_account_4_transaction" domain="[('company_id','=',partner_id)]" />
 				</xpath>
 				
 				<!-- <xpath expr="/form/sheet/div[@class='oe_right oe_button_box']" position="before"> -->
