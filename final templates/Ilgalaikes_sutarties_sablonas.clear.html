@@ -1,5 +1,3 @@
-
-	
 	
 	
 
@@ -861,7 +859,7 @@ ir joje susitarė dėl žemiau išdėstyto:</font></font></p>
 			</p>
 			<p align="justify" style="margin-bottom: 0cm"><br>
 			</p>
-			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- Company employee‘s position --> ${object.manager_id.function or "" or "" } </span></font></font></p>
+			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- Company employee‘s position --> ${ctx['manager_job_id'] or "" or "" } </span></font></font></p>
 			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- Company‘s employee signing the contract --> ${object.manager_id.name or "" or "" } </span></font></font></p>
 			<p align="justify" style="margin-bottom: 0cm"><br>
 			</p>

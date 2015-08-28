@@ -41,6 +41,7 @@ class template_contract(osv.osv):
               'owner_account_4_transaction':fields.many2one('res.partner.bank',string="Company Acc No.",help="Your Company Account Number"),
               'customer_account_4_transaction':fields.many2one('res.partner.bank',string="Customer Acc No.",help="Customer Company Account Number"),
               'credit_amt_in_words':fields.text(string="credit amount in words"),
+              'is_send_mail':fields.boolean("Is send mail")
               }
     
     
@@ -48,9 +49,7 @@ class template_contract(osv.osv):
         
         if vals.has_key('manager_id') and vals['manager_id']!=False:
             id_manager=vals['manager_id']
-            #print('00000000000000000000000000000000000000000000000 id_manager',id_manager)
             user_id=self.pool.get('hr.employee').search(cr,uid,[('user_id','=',id_manager)])
-            ##print('00000000000000000000000000000000000000000000000 user',user_id)
             if len(user_id)!=0:
                 vals['manager_details']=user_id[0]
             else:
@@ -61,31 +60,24 @@ class template_contract(osv.osv):
     
     def write(self,cr,uid,ids,vals,context):
         try:
-            print('00000000000000000000000000000000000000 cr, uid , ids ,  write vals',cr,uid,ids,vals)
-            #print('********************* ids',type(ids).__name__)
             if type(ids).__name__ == 'list':id_int = ids[0]
-            #print('********************* ids',type(id_int).__name__)
             self_obj=self.browse(cr,uid,id_int,context)
-            print "88888888888888888888888888888888888888888",self_obj,self_obj.partner_id
             sale_obj=self.pool.get('sale.order')
             salelist_ids=sale_obj.search(cr,uid,[('project_id','=',ids[0]),('state', '=', 'manual')])
             if salelist_ids:
                 currency=sale_obj.browse(cr,uid,salelist_ids[0]).pricelist_id.currency_id.name
             else:
                 currency="!!"
-                print('00000000000000000000000000000 sale ids[0] currency id',currency)
             vat=0
             salelist=[]
             for i in salelist_ids:
                 list=sale_obj.read(cr,uid,i,fields=['name'])['name']
                 salelist.append(list)
                 vat+=sale_obj.browse(cr,uid,i).amount_tax
-            #print('0000000000000000000000000000 name',salelist)
             salelist_string=', '.join(salelist)
             vals['sale_orders']=salelist_string
             if self_obj.partner_id:
                 customer_lang=(self.pool.get("res.partner").read(cr,uid,self_obj.partner_id.id,fields=['lang']))['lang']
-                print('======================customer lang',customer_lang)
                 lang1 ='lt' if (customer_lang=='lt_LT') else 'en_US' 
                 print('lang',lang1)
                 centu='Centų'
@@ -159,14 +151,10 @@ class template_contract(osv.osv):
             '''get all sales orders related to this contract ,  only executes when some field other than fix_price_to_invoice 
             or ca_to_invoice is edited'''
             
-            #print('8888888888888888888888888888******************',self_obj.manager_id.id)
-            #print('8888888888888888888888888888******************',self_obj.manager_details)
             ''' for manager(user) details in hr.employee''' 
             if vals.has_key('manager_id') and vals['manager_id']!=False:
                 id_manager=vals['manager_id']
-                #print('00000000000000000000000000000000000000000000000 id_manager',id_manager)
                 user_id=self.pool.get('hr.employee').search(cr,uid,[('user_id','=',id_manager)])
-                #print('00000000000000000000000000000000000000000000000 user',user_id)
                 if len(user_id)!=0:
                     vals['manager_details']=user_id[0]
                 else:
@@ -174,9 +162,7 @@ class template_contract(osv.osv):
             
             if not vals.has_key('manager_id') and self_obj.manager_id.id!=False and self_obj.manager_id!=False:
                 id_manager=self_obj.manager_id.id
-                #print('00000000000000000000000000000000000000000000000 id_manager',id_manager)
                 user_id=self.pool.get('hr.employee').search(cr,uid,[('user_id','=',id_manager)])
-                #print('00000000000000000000000000000000000000000000000 user',user_id)
                 if len(user_id)!=0:
                     vals['manager_details']=user_id[0]
                 else:
@@ -209,7 +195,6 @@ class template_settings(osv.osv):
                'base_template':False
                } 
     def preview_template(self,cr,uid,id,context=None):
-        #print('********* id',id)
         vals={}
         for i in id:
             html_description_obj = self.browse(cr,uid,i,context)
@@ -220,11 +205,25 @@ class template_settings(osv.osv):
             credit_words=amount_to_text(contract_obj.partner_id.credit_limit)
             current_time_1 = time.strftime("%d/%m/%Y")
             current_time_2 = time.strftime("%Y/%m/%d")
-            rendered=self.pool.get('email.template').render_template(cr,SUPERUSER_ID,html_description,'account.analytic.account',contract_id,{'credit_words':credit_words,'current_time_1':current_time_1,'current_time_2':current_time_2})
+            manager=contract_obj.manager_id.id
+            manager_job_function=False
+            if manager:
+                managers_id=self.pool.get('hr.employee').search(cr,uid,[('user_id','=',manager)],context=None)
+                if managers_id:
+                    manager_job_function=self.pool.get('hr.employee').read(cr,uid,managers_id,['job_id'],context=None)[0].get('job_id',False)[1]
+            obj_to_translate=contract_obj.partner_id.property_payment_term
+            obj_to_translate_id=obj_to_translate.id
+            description=obj_to_translate.note
+            translated=self.pool.get('ir.translation')._get_source(cr, uid,name='account.payment.term,note' , types='model', lang='lt_LT', source=description, res_id=[obj_to_translate_id])
+            rendered=self.pool.get('email.template').render_template(cr,SUPERUSER_ID,html_description,'account.analytic.account',contract_id,{'credit_words':credit_words,
+                                                                                                                                              'current_time_1':current_time_1,
+                                                                                                                                              'current_time_2':current_time_2,
+                                                                                                                                              'manager_job_id':manager_job_function,
+                                                                                                                                              'lithunian_payment_term_description':translated
+                                                                                                                                              })
             wizard_id = wizard_obj.create(cr,uid,{'report_html':rendered},context)
             ids=[]
             ids.append(contract_id)
-            #print('********* contract id',contract_id)
             self.pool.get("account.analytic.account").write(cr,uid,ids,vals,context)
             
         return {
@@ -239,7 +238,6 @@ class template_settings(osv.osv):
 
     def write (self,cr,uid,id,vals,context):
         if vals.has_key('child_of_template'):
-            #print ("The base template has been changed",vals)
             html_description = self.browse(cr,uid,vals.get('child_of_template',False),context).report_html
             vals['report_html'] = html_description
         return super(template_settings,self).write(cr,uid,id,vals,context)
