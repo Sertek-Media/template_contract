@@ -41,6 +41,7 @@ class template_contract(osv.osv):
               'owner_account_4_transaction':fields.many2one('res.partner.bank',string="Company Acc No.",help="Your Company Account Number"),
               'customer_account_4_transaction':fields.many2one('res.partner.bank',string="Customer Acc No.",help="Customer Company Account Number"),
               'credit_amt_in_words':fields.text(string="credit amount in words"),
+              
               }
     
     

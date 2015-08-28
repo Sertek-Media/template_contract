@@ -40,7 +40,7 @@
 				<xpath expr="/form/sheet/group/group/field[@name='manager_id']" position="after">
 					<field name="customer_employee_id" domain="[('parent_id','=',partner_id)]" />
 					<field name="owner_account_4_transaction" domain="[('company_id','=',company_id)]" />
-					<field name="customer_account_4_transaction" domain="[('company_id','=',partner_id)]" />
+					<field name="customer_account_4_transaction" domain="[('partner_id','=',partner_id)]" />
 				</xpath>
 				
 				<!-- <xpath expr="/form/sheet/div[@class='oe_right oe_button_box']" position="before"> -->
