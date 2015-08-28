@@ -1,3 +1,5 @@
+
+	
 	
 	
 
@@ -12,17 +14,17 @@ diena</font></font></p>
 </p>
 <p align="justify" style="margin-bottom: 0cm; line-height: 150%"><br>
 </p>
-<p align="justify" style="margin-bottom: 0cm; line-height: 115%"><font face="Times New Roman, serif"><font style="font-size: 11pt"><b><span style="background: #ff0000"><!-- Company name -->“${object.company_id.name or "" } </span></b></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
-įmonės kodas </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- Company‘s code --> ${object.company_id.company_registry or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
-registruotos buveinės adresas </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- Company‘s address (Street, house number, city) --> ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" }f</span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
-atstovaujama pradavimų vadovo </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- Person signing contract (first name lastname) --> ${object.manager_id.name or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%"><font face="Times New Roman, serif"><font style="font-size: 11pt"><b><span ><!-- Company name -->“${object.company_id.name or "" } </span></b></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
+įmonės kodas </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span ><!-- Company‘s code --> ${object.company_id.company_registry or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
+registruotos buveinės adresas </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span ><!-- Company‘s address (Street, house number, city) --> ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" }f</span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
+atstovaujama pradavimų vadovo </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span ><!-- Person signing contract (first name lastname) --> ${object.manager_id.name or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
 veikiančio pagal įgaliojimą, (toliau vadinamas </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><i><b>„Vykdytoju“</b></i></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">),
-ir </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.partner_id.name or ""} </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
+ir </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.partner_id.name or ""} </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
 <!-- Customer‘s company name --> įmonės kodas
-</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.partner_id.ref or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
-<!-- Customer‘s company‘s code --> registruotos </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000">buveinės
+</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.partner_id.ref or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
+<!-- Customer‘s company‘s code --> registruotos </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span >buveinės
 adresas<!-- Customer‘s address (Street, house number, city) --> ${object.partner_id.street or "" }, ${object.partner_id.city or "" }, ${object.partner_id.state_id.name or "" }, ${object.partner_id.zip or "" }, ${object.partner_id.country_id.name or ""  or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
-atstovaujama </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.customer_employee_id.name} </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
+atstovaujama </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.customer_employee_id.name} </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
 <!-- Customer employee‘s name (first name last name) -->,veikiančio
 bendrovės įstatų pagrindu, (toliau vadinamas </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><i><b>„Užsakovu“</b></i></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">),
 toliau abu atskirai vadinami </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><i><b>„Šalimi“</b></i></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">,
@@ -77,9 +79,9 @@ ir joje susitarė dėl žemiau išdėstyto:</font></font></p>
 		</li><li><p align="justify" style="margin-bottom: 0cm; line-height: 150%">
 		<font face="Times New Roman, serif"><font style="font-size: 11pt">Užsakymai
 		gali būti pateikti vienu iš toliau nurodytų būdų: (i)
-		pateikiant popierinį užsakymą adresu </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or ""  or "" } <!-- Company‘s address -->, Vilnius</span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">;
-		(ii) faksu, Nr. </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.company_id.fax or ""  or "" } <!-- Fax --></span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">;
-		(iii) el. paštu, adresu </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000">${object.company_id.email or ""  or "" } <!-- email --></span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">.
+		pateikiant popierinį užsakymą adresu </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or ""  or "" } <!-- Company‘s address -->, Vilnius</span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">;
+		(ii) faksu, Nr. </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.company_id.fax or ""  or "" } <!-- Fax --></span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">;
+		(iii) el. paštu, adresu </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span >${object.company_id.email or ""  or "" } <!-- email --></span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">.
 		Užsakymas nusiųstas faksu ar el. paštu laikomas gautu sekančią
 		darbo dieną.  </font></font>
 		</p>
@@ -311,11 +313,11 @@ ir joje susitarė dėl žemiau išdėstyto:</font></font></p>
 		</li><li><p align="justify" style="margin-bottom: 0cm; line-height: 150%; widows: 2; orphans: 2">
 		<font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">Vykdytojui
 		atlikus Darbus, jis išrašo PVM sąskaitą&nbsp;faktūrą ir ją
-		pateikia Užsakovui el. paštu, adresu: </font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- Customer‘s email --> ${object.partner_id.email}</span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">.
+		pateikia Užsakovui el. paštu, adresu: </font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span ><!-- Customer‘s email --> ${object.partner_id.email}</span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">.
 		Sąskaita laikoma gauta sekančią darbo dieną, einančią po
 		išsiuntimo dienos. Vykdytojas privalo apmokėti sąskaitą ne
-		vėliau kaip per </font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.partner_id.property_payment_term.name or ""} <!-- Payment term, in calendar days --></span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">
-		</font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"></span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">
+		vėliau kaip per </font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${ctx['lithunian_payment_term_description'] or ""} <!-- Payment term, in calendar days --></span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">
+		</font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span ></span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">
 		<!-- Payment term, in calendar days, in words
  -->kalendorinių
 		dienų, nuo jos pateikimo dienos. </font></font></font>
@@ -338,8 +340,8 @@ ir joje susitarė dėl žemiau išdėstyto:</font></font></p>
 		</li><li><p align="justify" style="margin-bottom: 0cm; line-height: 150%; widows: 2; orphans: 2">
 		<font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">Užsakovui
 		suteikiama teisė į Prekinį kreditą (pažymėti „X“): TAIP □
-		/ NE □. Jeigu suteikiama, jo dydis yra: </font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.partner_id.credit_limit or "" } <!-- Credit amount, in numbers --></span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">
-		(</font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${ctx['credit_words']} </span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">)
+		/ NE □. Jeigu suteikiama, jo dydis yra: </font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.partner_id.credit_limit or "" } <!-- Credit amount, in numbers --></span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">
+		(</font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${ctx['credit_words']} </span></font></font></font><font color="#00000a"><font face="Times New Roman, serif"><font style="font-size: 11pt">)
 		Eur. Suteiktą Prekinį kreditą Vykdytojas turi teisę bet kada
 		vienašališkai panaikinti arba pakeisti jo dydį, apie tai iš
 		anksto, ne vėliau kaip prieš 5 (penkias) darbo dienas,
@@ -563,7 +565,7 @@ ir joje susitarė dėl žemiau išdėstyto:</font></font></p>
 	<ol style="padding-left:12px">
 		<li><p align="justify" style="margin-bottom: 0cm; line-height: 150%">
 		<font face="Times New Roman, serif"><font style="font-size: 11pt">Sutartis
-		įsigalioja nuo jos pasirašymo momento ir galioja iki </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.date or "" } <!-- Contract valid until this date --> </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">
+		įsigalioja nuo jos pasirašymo momento ir galioja iki </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.date or "" } <!-- Contract valid until this date --> </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt">
 		d. Tuo atveju, jeigu nei viena iš Šalių, likus ne daugiau kaip
 		30 (trisdešimčiai) kalendorinių dienų iki Sutarties galiojimo
 		pabaigos, nepraneša raštu kitai Šaliai apie ketinimą nepratęsti
@@ -759,60 +761,60 @@ ir joje susitarė dėl žemiau išdėstyto:</font></font></p>
 	<col width="307">
 	</colgroup><tbody><tr valign="top">
 		<td width="303" height="6" style="border: none; padding: 0cm">
-			<p align="justify"><font face="Times New Roman, serif"><font style="font-size: 11pt"><b><span style="background: #ff0000"><!-- Company‘s name --> ${object.company_id.name or "" } </span></b></font></font></p>
+			<p align="justify"><font face="Times New Roman, serif"><font style="font-size: 11pt"><b><span ><!-- Company‘s name --> ${object.company_id.name or "" } </span></b></font></font></p>
 		</td>
 		<td width="307" style="border: none; padding: 0cm">
-			<p align="justify"><font face="Times New Roman, serif"><font style="font-size: 11pt"><b><span style="background: #ff0000"> ${object.partner_id.name or "" } </span></b></font></font></p>
+			<p align="justify"><font face="Times New Roman, serif"><font style="font-size: 11pt"><b><span > ${object.partner_id.name or "" } </span></b></font></font></p>
 		</td>
 	</tr>
 	<tr>
 		<td width="303" height="9" style="border: none; padding: 0cm">
-			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or ""  or "" } <!-- Company‘s address --></span></font></font></p>
+			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or ""  or "" } <!-- Company‘s address --></span></font></font></p>
 		</td>
 		<td width="303" height="9" style="border: none; padding: 0cm">
-			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.partner_id.street or "" }, ${object.partner_id.city or "" }, ${object.partner_id.state_id.name or "" }, ${object.partner_id.zip or "" }, ${object.partner_id.country_id.name or "" } <!-- customer Company‘s address --></span></font></font></p>
+			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.partner_id.street or "" }, ${object.partner_id.city or "" }, ${object.partner_id.state_id.name or "" }, ${object.partner_id.zip or "" }, ${object.partner_id.country_id.name or "" } <!-- customer Company‘s address --></span></font></font></p>
 		</td>
 	</tr>
 	<tr>
 		<td width="303" height="2" style="border: none; padding: 0cm">
 			<p><font face="Times New Roman, serif"><font style="font-size: 11pt">Įmonės
-			kodas </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.company_id.company_registry or "" } <!-- Company‘s code --></span></font></font></p>
+			kodas </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.company_id.company_registry or "" } <!-- Company‘s code --></span></font></font></p>
 		</td>
 		<td width="307" valign="top" style="border: none; padding: 0cm">
 			<p style="widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 11pt">Įmonės
-			kodas<span style="background: #ff0000"> ${object.partner_id.ref or ""  or "" } </span></font></font></p>
+			kodas<span > ${object.partner_id.ref or ""  or "" } </span></font></font></p>
 		</td>
 	</tr>
 	<tr>
 		<td width="303" height="2" style="border: none; padding: 0cm">
 			<p><font face="Times New Roman, serif"><font style="font-size: 11pt">PVM
-			kodas  </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.company_id.vat or "" } <!-- Company‘s VAT code --></span></font></font></p>
+			kodas  </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.company_id.vat or "" } <!-- Company‘s VAT code --></span></font></font></p>
 		</td>
 		<td width="307" valign="top" style="border: none; padding: 0cm">
 			<p style="widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 11pt">PVM
-			kodas<span style="background: #ff0000">  ${object.partner_id.vat or ""  or "" } </span></font></font>
+			kodas<span >  ${object.partner_id.vat or ""  or "" } </span></font></font>
 			</p>
 		</td>
 	</tr>
 	<tr>
 		<td width="303" height="2" style="border: none; padding: 0cm">
 			<p><font face="Times New Roman, serif"><font style="font-size: 11pt">A./s.
-			 </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.owner_account_4_transaction.acc_number or "" } <!-- Company‘s bank account --></span></font></font></p>
+			 </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.owner_account_4_transaction.acc_number or "" } <!-- Company‘s bank account --></span></font></font></p>
 		</td>
 		<td width="307" valign="top" style="border: none; padding: 0cm">
 			<p><font face="Times New Roman, serif"><font style="font-size: 11pt">A./s.
-			 </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.customer_account_4_transaction.acc_number or "" } <!-- customer‘s bank account --></span></font></font></p>
+			 </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.customer_account_4_transaction.acc_number or "" } <!-- customer‘s bank account --></span></font></font></p>
 		</td>
 	</tr>
 	<tr>
 		<td width="303" height="2" style="border: none; padding: 0cm">
-			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.owner_account_4_transaction.bank_name or "" } <!-- Company‘s bank name -->, </span></font></font><font face="Times New Roman, serif"><br><font style="font-size: 11pt">Banko
-			kodas &nbsp</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.owner_account_4_transaction.bank_bic or "" } <!-- Company‘s bank code --></span></font></font></p>
+			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.owner_account_4_transaction.bank_name or "" } <!-- Company‘s bank name -->, </span></font></font><font face="Times New Roman, serif"><br><font style="font-size: 11pt">Banko
+			kodas &nbsp</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.owner_account_4_transaction.bank_bic or "" } <!-- Company‘s bank code --></span></font></font></p>
 		</td>
 		<td width="307" valign="top" style="border: none; padding: 0cm">
-			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.customer_account_4_transaction.bank_name or "" } <!-- Customer‘s bank name -->, </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><br>Banko
+			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.customer_account_4_transaction.bank_name or "" } <!-- Customer‘s bank name -->, </span></font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><br>Banko
 			kodas &nbsp
-			</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.customer_account_4_transaction.bank_bic or "" } <!-- Customer‘s bank code --></span></font></font></p>
+			</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.customer_account_4_transaction.bank_bic or "" } <!-- Customer‘s bank code --></span></font></font></p>
 		</td>
 	</tr>
 	<tr>
@@ -828,28 +830,28 @@ ir joje susitarė dėl žemiau išdėstyto:</font></font></p>
 	<tr>
 		<td width="303" height="2" style="border: none; padding: 0cm">
 			<p><font face="Times New Roman, serif"><font style="font-size: 11pt">Tel.:
-			</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.company_id.phone or ""} <!-- Company‘s phone number --></span></font></font></p>
+			</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.company_id.phone or ""} <!-- Company‘s phone number --></span></font></font></p>
 		</td>
 		<td width="307" style="border: none; padding: 0cm">
-			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000">Tel.: ${object.partner_id.phone or "" or "" } </span></font></font></p>
+			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span >Tel.: ${object.partner_id.phone or "" or "" } </span></font></font></p>
 		</td>
 	</tr>
 	<tr>
 		<td width="303" height="2" style="border: none; padding: 0cm">
 			<p><font face="Times New Roman, serif"><font style="font-size: 11pt">Fax:
-			</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.company_id.fax or "" } <!-- Company‘s fax number --></span></font></font></p>
+			</font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.company_id.fax or "" } <!-- Company‘s fax number --></span></font></font></p>
 		</td>
 		<td width="307" style="border: none; padding: 0cm">
-			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000">Fax:${object.partner_id.fax or ""  or "" } </span></font></font></p>
+			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span >Fax:${object.partner_id.fax or ""  or "" } </span></font></font></p>
 		</td>
 	</tr>
 	<tr>
 		<td width="303" height="2" style="border: none; padding: 0cm">
 			<p><font face="Times New Roman, serif"><font style="font-size: 11pt">El.
-			paštas: </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"> ${object.company_id.email or ""} <!-- Company‘s email address --></span></font></font></p>
+			paštas: </font></font><font face="Times New Roman, serif"><font style="font-size: 11pt"><span > ${object.company_id.email or ""} <!-- Company‘s email address --></span></font></font></p>
 		</td>
 		<td width="307" style="border: none; padding: 0cm">
-			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000">El.
+			<p><font face="Times New Roman, serif"><font style="font-size: 11pt"><span >El.
 			paštas:<!-- Same fields, just for customer --> ${object.partner_id.email or "" or "" } </span></font></font></p>
 		</td>
 	</tr>
@@ -859,8 +861,8 @@ ir joje susitarė dėl žemiau išdėstyto:</font></font></p>
 			</p>
 			<p align="justify" style="margin-bottom: 0cm"><br>
 			</p>
-			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- Company employee‘s position --> ${ctx['manager_job_id'] or "" or "" } </span></font></font></p>
-			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- Company‘s employee signing the contract --> ${object.manager_id.name or "" or "" } </span></font></font></p>
+			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span ><!-- Company employee‘s position --> ${ctx['manager_job_id'] or "" or "" } </span></font></font></p>
+			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span ><!-- Company‘s employee signing the contract --> ${object.manager_id.name or "" or "" } </span></font></font></p>
 			<p align="justify" style="margin-bottom: 0cm"><br>
 			</p>
 			<p align="justify" style="margin-bottom: 0cm"><br>
@@ -876,8 +878,8 @@ ir joje susitarė dėl žemiau išdėstyto:</font></font></p>
 			</p>
 			<p align="justify" style="margin-bottom: 0cm"><br>
 			</p>
-			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- customer employee‘s position --> ${object.customer_employee_id.function or "" or "" } </span></font></font></p>
-			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span style="background: #ff0000"><!-- customer employee signing the contract --> ${object.customer_employee_id.name or "" or "" } </span></font></font></p>
+			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span ><!-- customer employee‘s position --> ${object.customer_employee_id.function or "" or "" } </span></font></font></p>
+			<p align="justify" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 11pt"><span ><!-- customer employee signing the contract --> ${object.customer_employee_id.name or "" or "" } </span></font></font></p>
 			<p align="justify" style="margin-bottom: 0cm"><br>
 			</p>
 			<p align="justify" style="margin-bottom: 0cm"><br>
@@ -906,12 +908,12 @@ pavyzdinė forma</b></font></font></p><p align="right" style="margin-bottom: 0cm
 	<col width="270">
 	</colgroup><tbody><tr valign="top">
 		<td width="279" height="5" style="border: none; padding: 0cm">
-			<p style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><span style="background: #ff0000"> ${object.company_id.name or "" } </span></font></font></p>
-			<p style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><span style="background: #ff0000">Į.
+			<p style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><span > ${object.company_id.name or "" } </span></font></font></p>
+			<p style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><span >Į.
 			k. ${object.company_id.company_registry or "" } </span></font></font></p>
-			<p style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><span style="background: #ff0000">PVM
+			<p style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><span >PVM
 			${object.company_id.vat or "" } </span></font></font></p>
-			<p style="widows: 2; orphans: 2"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><span style="background: #ff0000"> ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></font></font></p>
+			<p style="widows: 2; orphans: 2"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><span > ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></font></font></p>
 		</td>
 		<td width="81" style="border: none; padding: 0cm">
 			<p style="widows: 2; orphans: 2"><br>

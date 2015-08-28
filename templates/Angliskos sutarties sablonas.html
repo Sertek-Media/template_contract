@@ -21,13 +21,13 @@
 				<br>
 				</p>
 				<p lang="lt-LT" class="western" align="justify" style="margin-bottom: 0cm">
-				<font face="Times New Roman, serif"><font style="font-size: 10pt"><b><span style="background: #ff0000"> ${object.company_id.name or "" } </span></b></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">,
-				įmonės kodas </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.company_id.company_registry or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">,
-				kurią atstovauja </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.manager_id.function or "" }  ${object.manager_id.name or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">,
+				<font face="Times New Roman, serif"><font style="font-size: 10pt"><b><span > ${object.company_id.name or "" } </span></b></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">,
+				įmonės kodas </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.company_id.company_registry or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">,
+				kurią atstovauja </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${ctx['manager_job_id'] or "" }  ${object.manager_id.name or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">,
 				veikiantis pagal įgaliojimą (toliau vadinamas </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><i><b>„Vykdytoju“</b></i></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">),
-				ir </font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.partner_id.name or ""} </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt">
+				ir </font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.partner_id.name or ""} </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt">
 				</font></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">kodas
-				</font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.partner_id.ref or ""} </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt">
+				</font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.partner_id.ref or ""} </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt">
 				</font></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">(toliau
 				vadinamas </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><i><b>„Užsakovu“</b></i></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">),
 				toliau abu atskirai vadinami </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><i><b>„Šalimi“</b></i></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">,
@@ -172,7 +172,7 @@
 				Pagamintos produkcijos atsiėmimo/pristatymo sąlygos nustatomos
 				priede-užsakyme. Jei priedas-užsakymas nenustato
 				atsiėmimo/pristatymo sąlygų, tuomet yra laikoma, kad Užsakovas
-				atsiima pagamintą produkciją Vykdytojo patalpose, </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">;</font></font></p>
+				atsiima pagamintą produkciją Vykdytojo patalpose, </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">;</font></font></p>
 				<p lang="lt-LT" class="western" align="justify" style="margin-bottom: 0cm">
 				<font face="Times New Roman, serif"><font style="font-size: 10pt">3.7.
 				Užsakovas turi teisę pretenzijas, jei tokios yra, raštu
@@ -286,7 +286,7 @@
 				<p lang="lt-LT" class="western" align="justify" style="margin-bottom: 0cm; widows: 2; orphans: 2">
 				<font face="Times New Roman, serif"><font style="font-size: 10pt">5.2.
 				Vykdytojas suteikia Užsakovui mokėjimo atidėjimo laikotarpį
-				nuo sąskaitos išrašymo dienos: iki </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.partner_id.property_payment_term.name or ""} </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">
+				nuo sąskaitos išrašymo dienos: iki </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${ctx['lithunian_payment_term_description'] or ""} </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">
 				kalendorinių dienų, per kurias Užsakovas įsipareigoja
 				apmokėti už perkamas prekes ar suteiktas paslaugas pagal
 				Vykdytojo pateiktą sąskaitą.</font></font></p>
@@ -527,14 +527,14 @@
 				<br>
 				</p>
 				<p lang="lt-LT" class="western" align="justify" style="margin-bottom: 0cm">
-				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><b><span style="background: #ff0000"> ${object.company_id.name or "" } </span></b></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
-				company identification code </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000"> ${object.company_id.company_registry or "" } </span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
-				represented by </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000"> ${object.manager_id.function or "" } ${object.manager_id.name or "" } </span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
+				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><b><span > ${object.company_id.name or "" } </span></b></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
+				company identification code </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span > ${object.company_id.company_registry or "" } </span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
+				represented by </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span > ${ctx['manager_job_id'] or "" } ${object.manager_id.name or "" } </span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
 				acting according under the power-of-attorney (hereinafter
 				referred to as </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><i><b>Contractor</b></i></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
-				and </span></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000"> ${object.partner_id.name or ""} </span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">
+				and </span></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span > ${object.partner_id.name or ""} </span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">
 				</span></font></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
-				company identification code </span></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000"> ${object.partner_id.ref or ""} </span></span></font></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">
+				company identification code </span></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span > ${object.partner_id.ref or ""} </span></span></font></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">
 				(hereinafter referred to as </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><i><b>Client</b></i></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">),
 				hereinafter each individually referred to as the </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><i><b>Party</b></i></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">
 				and together as </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><i><b>Parties,
@@ -662,7 +662,7 @@
 				stipulated in the annex-order. If the annex-order does not
 				establish any collection/delivery conditions, it shall be
 				considered that the Client will collect the product from the
-				Contractor’s premises at </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000"> ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">;</span></font></font></p>
+				Contractor’s premises at </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span > ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">;</span></font></font></p>
 				<p lang="en-GB" class="western" align="justify" style="margin-bottom: 0cm">
 				<font face="Times New Roman, serif"><font style="font-size: 10pt">3.7.
 				The Client has the right to make claims, if any, in writing
@@ -763,7 +763,7 @@
 				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">5.2.
 				</span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">The
 				contractor gives the Client a payment grace period from the date
-				of the invoice up to </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.partner_id.property_payment_term.name or ""} </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">
+				of the invoice up to </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.partner_id.property_payment_term.note or ""} </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">
 				calendar days during which the Client undertakes to pay for the
 				purchase of goods or services provided by the Contractor's
 				account.</font></font></p>
@@ -981,62 +981,62 @@
 	<tbody>
 		<tr valign="top">
 			<td width="307" height="7" style="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.19cm; padding-right: 0.19cm">
-				<p lang="en-GB" class="western" align="justify"><font face="Times New Roman, serif"><font style="font-size: 10pt"><b><span style="background: #ff0000"> ${object.company_id.name or "" } </span></b></font></font></p>
+				<p lang="en-GB" class="western" align="justify"><font face="Times New Roman, serif"><font style="font-size: 10pt"><b><span > ${object.company_id.name or "" } </span></b></font></font></p>
 			</td>
 			<td width="308" style="border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0.19cm">
-				<p lang="lt-LT" class="western"><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><b><span style="background: #ff0000"> ${object.partner_id.name or "" }
+				<p lang="lt-LT" class="western"><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><b><span > ${object.partner_id.name or "" }
 				</span></b></span></font></font></font>
 				</p>
 			</td>
 		</tr>
 		<tr valign="top">
 			<td width="307" height="9" style="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.19cm; padding-right: 0.19cm">
-				<p lang="en-GB" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">&nbsp${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></font></font></p>
+				<p lang="en-GB" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span >&nbsp${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></font></font></p>
 			</td>
 			<td width="308" style="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0.19cm">
-				<p lang="en-GB" class="western" align="justify"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.partner_id.street or "" }, ${object.partner_id.city or "" }, ${object.partner_id.state_id.name or "" }, ${object.partner_id.zip or "" }, ${object.partner_id.country_id.name or ""  or "" } </span></font></font></p>
+				<p lang="en-GB" class="western" align="justify"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.partner_id.street or "" }, ${object.partner_id.city or "" }, ${object.partner_id.state_id.name or "" }, ${object.partner_id.zip or "" }, ${object.partner_id.country_id.name or ""  or "" } </span></font></font></p>
 			</td>
 		</tr>
 		<tr valign="top">
 			<td width="307" height="3" style="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.19cm; padding-right: 0.19cm">
-				<p lang="lt-LT" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">Company
+				<p lang="lt-LT" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >Company
 				code: ${object.company_id.company_registry or "" } </span></span></font></font></p>
 			</td>
 			<td width="308" style="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0.19cm">
-				<p lang="lt-LT" class="western" style="widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">Company
+				<p lang="lt-LT" class="western" style="widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >Company
 				code: ${object.company_id.company_registry or "" } </span></span></font></font>
 				</p>
 			</td>
 		</tr>
 		<tr valign="top">
 			<td width="307" height="3" style="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.19cm; padding-right: 0.19cm">
-				<p lang="en-GB" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">VAT
+				<p lang="en-GB" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span >VAT
 				registration No.  ${object.company_id.vat or "" } </span></font></font></p>
 			</td>
 			<td width="308" style="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0.19cm">
-				<p lang="lt-LT" class="western" style="widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">VAT
-				registration No: ${object.partner_id.vat or "" } </span></span></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">
+				<p lang="lt-LT" class="western" style="widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >VAT
+				registration No: ${object.partner_id.vat or "" } </span></span></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >
 				</span></span></font></font></font>
 				</p>
 			</td>
 		</tr>
 		<tr valign="top">
 			<td width="307" height="3" style="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.19cm; padding-right: 0.19cm">
-				<p lang="en-GB" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">Bank
+				<p lang="en-GB" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span >Bank
 				account No. ${object.owner_account_4_transaction.acc_number or "" } </span></font></font></p>
 			</td>
 			<td width="307" height="3" style="border-top: none; border-bottom: none; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-right: 0.19cm">
-				<p lang="en-GB" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">Bank
+				<p lang="en-GB" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span >Bank
 				account No. ${object.customer_account_4_transaction.acc_number or "" } </span></font></font></p>
 			</td>
 		</tr>
 		<tr valign="top">
 			<td width="307" height="1" style="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.19cm; padding-right: 0.19cm">
-				<p lang="lt-LT" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">AB
+				<p lang="lt-LT" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >AB
 				${object.owner_account_4_transaction.bank_name or "" }, Bank code ${object.owner_account_4_transaction.bank_bic or "" } </span></span></font></font></p>
 			</td>
 			<td width="307" height="1" style="border-top: none; border-bottom: none; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-right: 0.19cm">
-				<p lang="lt-LT" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">AB
+				<p lang="lt-LT" class="western"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >AB
 				${object.customer_account_4_transaction.bank_name or "" }, Bank code ${object.customer_account_4_transaction.bank_bic or "" } </span></span></font></font></p>
 			</td>
 		</tr>
@@ -1046,9 +1046,9 @@
 				<br>
 				</p>
 				<p lang="en-GB" class="western" align="justify" style="margin-bottom: 0cm">
-				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.manager_id.name or "" } </span></font></font></p>
+				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.manager_id.name or "" } </span></font></font></p>
 				<p lang="en-GB" class="western" align="justify" style="margin-bottom: 0cm">
-				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.manager_id.function or "" } </span></font></font></p>
+				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${ctx['manager_job_id'] or "" } </span></font></font></p>
 				<p lang="en-GB" class="western" align="justify" style="margin-bottom: 0cm">
 				<br>
 				</p>
@@ -1063,9 +1063,9 @@
 				<br>
 				</p>
 				<p lang="en-GB" class="western" align="justify" style="margin-bottom: 0cm">
-				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.customer_employee_id.name or "" } </span></font></font></p>
+				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.customer_employee_id.name or "" } </span></font></font></p>
 				<p lang="en-GB" class="western" align="justify" style="margin-bottom: 0cm">
-				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.customer_employee_id.function or "" } </span></font></font></p>
+				<font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.customer_employee_id.function or "" } </span></font></font></p>
 				<p lang="en-GB" class="western" align="justify" style="margin-bottom: 0cm">
 				<br>
 				</p>
@@ -1094,7 +1094,7 @@
 			<br>
 			</p>
 			<p lang="lt-LT" class="western" align="right" style="margin-bottom: 0cm">
-			<font style="font-size: 10pt"><span style="background: #ff0000">
+			<font style="font-size: 10pt"><span >
 				${ctx['current_time_2']}
 			</span></font></p>
 
@@ -1116,7 +1116,7 @@
 			<br>
 			</p>
 			<p lang="en-GB" class="western" align="right" style="margin-bottom: 0cm">
-			<font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">${ctx['current_time_1']}</span></font></font></p>
+			<font face="Times New Roman, serif"><font style="font-size: 10pt"><span >${ctx['current_time_1']}</span></font></font></p>
 			<p lang="en-GB" class="western" align="right" style="margin-bottom: 0cm">
 			<font face="Times New Roman, serif"><font style="font-size: 10pt">Vilnius</font></font></p>
 			<p lang="lt-LT" class="western" style="margin-bottom: 0cm"><br>
@@ -1690,11 +1690,11 @@
 			<p lang="lt-LT" class="western" align="justify" style="margin-bottom: 0cm">
 			<font face="Times New Roman, serif"><font style="font-size: 10pt">2.2.
 			Maketų suderinimas ir pasitvirtinimas su Užsakovu ne vėliau
-			kaip iki </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">[*]</span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">.
-			Užsakovas pateikia apipavidalinimui medžiagą iki </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">[*]</span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">.</font></font></p>
+			kaip iki </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span >[*]</span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">.
+			Užsakovas pateikia apipavidalinimui medžiagą iki </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span >[*]</span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">.</font></font></p>
 			<p lang="lt-LT" class="western" align="justify" style="margin-bottom: 0cm">
 			<font face="Times New Roman, serif"><font style="font-size: 10pt">2.3.
-			Užsakovui pervedus avansą iki </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">[*]</span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">
+			Užsakovui pervedus avansą iki </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span >[*]</span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">
 			Vykdytojas įsipareigoja pagaminti 300 vnt. stovelių ir 10 stendų
 			iki [*], o likusią dalį [*] stendus iki [*].
 			Nesumokėjus Užsakovui avanso iki sutarto termino, darbų
@@ -1726,11 +1726,11 @@
 			<p lang="lt-LT" class="western" align="justify" style="margin-bottom: 0cm">
 			<font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">2.2.
 			The layout design is agreed with and confirmed by the Client no
-			later than by </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">[*]</span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">.
-			The Client must provide material for finishing by </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">[*]</span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">.</span></font></font></p>
+			later than by </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >[*]</span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">.
+			The Client must provide material for finishing by </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >[*]</span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">.</span></font></font></p>
 			<p lang="lt-LT" class="western" align="justify" style="margin-bottom: 0cm">
 			<font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">2.3.
-			If the Client pays the deposit by </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">[*]</span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
+			If the Client pays the deposit by </span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >[*]</span></span></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">,
 			the Contractor agrees to produce 300 units of display boards and
 			10 hoardings by [*]. The remaining amount – [*] hoardings
 			– must be produced by [*]. Should the Client fail to pay
@@ -1776,12 +1776,12 @@
 	<tr valign="top">
 
 		<td width="314" height="10" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.19cm">
-			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.company_id.name or "" } </span></font></font></p>
-			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">Company
+			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.company_id.name or "" } </span></font></font></p>
+			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span >Company
 			code ${object.company_id.company_registry or "" } </span></font></font></p>
-			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000">VAT
+			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span >VAT
 			registration No. ${object.company_id.vat or "" } </span></font></font></p>
-			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></font></font></p>
+			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.company_id.street or "" }, ${object.company_id.city or "" }, ${object.company_id.state_id.name or "" }, ${object.company_id.zip or "" }, ${object.company_id.country_id.name or "" } </span></font></font></p>
 			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><br>
 			</p>
 			<p lang="en-GB" style="margin-bottom: 0cm; widows: 2; orphans: 2"><br>
@@ -1803,14 +1803,14 @@
 			</p>
 		</td>
 		<td width="313" style="border: 1px solid #000000; padding: 0.1cm">
-			<p lang="en-GB" class="western" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span style="background: #ff0000"> ${object.partner_id.name or "" } </span></font></font>
+			<p lang="en-GB" class="western" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span > ${object.partner_id.name or "" } </span></font></font>
 			</p>
-			<p lang="lt-LT" class="western" style="margin-bottom: 0cm"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">Company
-			code </span></span></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000"> ${object.partner_id.ref or "" } </span></span></font></font></font></p>
-			<p lang="lt-LT" class="western" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">VAT
-			registration No.  </span></span></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000">as
-			</span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000"> ${object.partner_id.vat or "" } </span></span></font></font></font></p>
-			<p lang="lt-LT" class="western" style="margin-bottom: 0cm"><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span style="background: #ff0000"> ${object.partner_id.street or "" }, ${object.partner_id.city or "" }, ${object.partner_id.state_id.name or "" }, ${object.partner_id.zip or "" }, ${object.partner_id.country_id.name or ""  or "" } </span></span></font></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">
+			<p lang="lt-LT" class="western" style="margin-bottom: 0cm"><font style="font-size: 10pt"><span lang="en-GB"><span >Company
+			code </span></span></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span > ${object.partner_id.ref or "" } </span></span></font></font></font></p>
+			<p lang="lt-LT" class="western" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >VAT
+			registration No.  </span></span></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span >as
+			</span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span > ${object.partner_id.vat or "" } </span></span></font></font></font></p>
+			<p lang="lt-LT" class="western" style="margin-bottom: 0cm"><font color="#000000"><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB"><span > ${object.partner_id.street or "" }, ${object.partner_id.city or "" }, ${object.partner_id.state_id.name or "" }, ${object.partner_id.zip or "" }, ${object.partner_id.country_id.name or ""  or "" } </span></span></font></font></font><font face="Times New Roman, serif"><font style="font-size: 10pt"><span lang="en-GB">
 			</span></font></font>
 			</p>
 			<p lang="en-GB" class="western" style="margin-bottom: 0cm"><br>
